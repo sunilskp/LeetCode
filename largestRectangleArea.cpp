@@ -49,3 +49,26 @@ public:
     return MAX;
     }
 };
+
+/*
+     int largestRectangleArea(vector<int>& heights) {
+        stack <int>S;
+        int i,to=0,maxx=0;
+        heights.push_back(0);
+        int len = heights.size();
+      
+     for(i=0; i<len; i++)   
+    {    
+        while( !S.empty() && heights[S.top()]  >= heights[i] )
+            {
+                to = S.top();
+                S.pop();
+                int ind= S.empty() ? -1 : S.top();
+                maxx = max (maxx,(heights[to]*(i-ind-1)));    
+            }
+         S.push(i);
+    }
+    return maxx;
+    }
+    
+   */
