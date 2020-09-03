@@ -7,9 +7,10 @@ public:
     while (--n) 
     {
         string cur = "";
-        for (int i = 0; i < res.size(); i++) {
+        int len = res.size();
+        for (int i = 0; i < len; i++) {
             int count = 1;
-             while ((i + 1 < res.size()) && (res[i] == res[i + 1])){
+             while ((i + 1 < len) && (res[i] == res[i + 1])){
                 count++;    
                 i++;
             }
