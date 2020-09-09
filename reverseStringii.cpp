@@ -33,18 +33,11 @@ public:
 };
 /*
 Optimised
-       string reverseStr(string s, int k) {
+              string reverseStr(string s, int k) {
         int len = s.length();
-        for(int i=0 ; i<len ; )
-        {
-            if(i % 2*k == 0 )
-            {
-                reverse(s.begin()+i , s.begin()+min(i+k,len) );
-                i+=2*k;
-            }
-            else 
-                i++;
-        }
+        for(int i=0 ; i<len ; i+=2*k)
+            reverse(s.begin()+i , s.begin()+min(i+k,len) );
+         
         return s;
         
     }
