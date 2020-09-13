@@ -1,3 +1,4 @@
+// Brute Force Approach
 class Solution {
 public:
     vector<int> plusOne(vector<int>& digits) {
@@ -25,5 +26,25 @@ public:
             digits[digits.size()-1] = sum;
             return digits;
         }
+    }
+};
+
+//optimized
+
+class Solution {
+public:
+        vector<int> plusOne(vector<int>& digits) {
+        int i=digits.size()-1;
+        for(i;i>=0;i--){
+            if(digits[i]<9)
+            {
+                digits[i]++;
+                return digits;
+            }
+            digits[i]=0;
+        }
+        vector<int>digit1(digits.size()+1,0);
+        digit1[0]=1;
+        return digit1;
     }
 };
