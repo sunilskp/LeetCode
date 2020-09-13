@@ -1,3 +1,4 @@
+// Brute Force Approach
 class Solution {
 public:
     vector<int> addToArrayForm(vector<int>& A, int K) {
@@ -32,6 +33,29 @@ public:
         if(c)
         {
             res.push_back(c);
+        }
+        reverse(res.begin(),res.end());
+        return res;
+    }
+};
+
+// Optimized one
+
+class Solution {
+public:
+    vector<int> addToArrayForm(vector<int>& A, int K) {
+        int i = A.size()-1;
+        vector<int>res;
+        while( i>=0 || K!=0 ) 
+        {
+           if(i>=0)
+            { 
+                K = A[i] + K;
+            }
+            res.push_back(K % 10);
+            K = K/10;
+            i--;
+            
         }
         reverse(res.begin(),res.end());
         return res;
